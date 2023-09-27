@@ -8,6 +8,6 @@
  if(yes){opens it}   
  else {creates a new database in that name}
 5) to add collections -->
-**db.createCollection("collection_name")**
+**db.createCollection("collection_name")**    
   eg: db.createCollection("movies")
 
