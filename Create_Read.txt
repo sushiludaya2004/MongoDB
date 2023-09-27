@@ -1,0 +1,62 @@
+** //inserting single value into the collection **
+
+db.movies.insertOne(
+{
+    _id : 1000,
+    name : "Jailer",
+    year : 2023,
+    genre : ["Action", "Comedy", "Thriller"],
+    rating : 7.5
+})
+
+** //inserting multiple values into the collection **
+
+db.movies.insertMany([
+{
+    _id : 1004,
+    name : "Mass",
+    year : 2023,
+    genre : ["Action", "Comedy", "Thriller"],
+    rating : 7.5
+},
+
+{
+    _id : 1001,
+    name : "Leo",
+    year : 2023,
+    genre : ["Action", "Thriller"],
+    rating : 9.5
+},
+
+{
+    _id : 1002,
+    name : "Goodnight",
+    year : 2023,
+    genre : ["Comedy", "Adventure"],
+    rating : 8
+},
+
+{
+    _id : 1003,
+    name : "Jawan",
+    year : 2023,
+    genre : ["Action", "Emotion"],
+    rating : 7.3
+}
+
+
+])
+
+db.movies.find() ** //will return all the values in collection **
+
+db.movies.findOne() //returns the first value in the collection
+
+db.movies.find({rating : 8}) //returns the values that satisfies this condition 
+
+// 0 - indicates exclude this while displaying
+// 1 - indicates include this while display
+
+db.movies.find({}, {name:1, genre:1}) //prints the name and genre of all the data
+// by default _id gets printed, to exclude make _id : 0
+
+db.movies.find({}, {_id : 0,name:1, genre:1})
