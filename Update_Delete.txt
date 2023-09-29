@@ -1,0 +1,24 @@
+//update single value
+db.movies.updateOne(
+{
+    _id : 1000
+},
+{
+    $set : {rating : 9.8} //$set --> sets the value to 9.8 for that particular id
+} )
+
+//update many values
+
+db.movies.updateMany({},
+{
+    $inc : {ratings : 1}  //$inc --> increments the rating of all by one
+} )
+
+//deleting single value
+db.movies.deleteOne(
+{ratings : 10}) // if many values has ratings 10, it deletes only the first value
+
+
+//deleting multiple values
+db.movies.deleteMany(
+{rating : 8})
